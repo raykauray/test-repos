@@ -1,0 +1,19 @@
+---
+apiVersion: xl-deploy/v1
+kind: Infrastructure
+spec:
+- name: Infrastructure/DEV/DE/helloakamai/x286646-akamai
+  type: overthere.SshHost
+  os: UNIX
+  zone: CPZ
+  env: DEV
+  resourceAddress: cguser.group.com
+  instanceOrPlatform: AD
+  connectionType: SCP
+  address: x286646
+  username: aradeploydev
+  children:
+  - name: helloakamai-cgpkg-container
+    type: cg.CgPkgContainer
+    installationUser: aradeploydev
+    postInstallUser: aradeploydev
