@@ -1,0 +1,25 @@
+---
+apiVersion: xl-deploy/v1
+kind: Applications
+spec:
+- name: Applications/Development/DE/helloakamai/feature-LUMIN-167-akamai-configuration-as-code_DE_helloakamai_1.0.9
+  type: udm.DeploymentPackage
+  deployables:
+  - name: helloakamai
+    type: cg.CgPkg
+    scanPlaceholders: true
+    placeholders:
+    - DEPLOYMENT_SCRIPT
+    - CONTRACT_ID
+    - PROPERTY_ID
+    - ACTIVATION_MODE
+    - GROUP_ID
+    fileEncodings:
+      ".+\\.properties": ISO-8859-1
+    fileUri: checksum-http://pkgrepoqa:8080/bbnas/bbdev/DE/AK2/feature/LUMIN-167-akamai-configuration-as-code/9/dist/package/feature-LUMIN-167-akamai-configuration-as-code_DE_helloakamai_1.0.9.zip
+    targetDirectory: '{{DEPLOY_PATH}}'
+  dictionary: '[{''env'': ''Environments/DEV/DE/helloakamai/helloakamai-env'', ''entries'':
+    {''DICTIONARY_ENV'': ''DEV/DE/helloakamai/helloakamai-env'', ''DEPLOY_PATH'':
+    ''/users/aradeploydev/akamai'', ''DEPLOYMENT_SCRIPT'': ''/users/xldeploy-agent/DeployTools/c/all/cg/ad/akamai/akamai-deployer.py'',
+    ''PROPERTY_ID'': ''prp_473778'', ''ACTIVATION_MODE'': ''STAGING'', ''CONTRACT_ID'':
+    ''ctr_3-1XI6OP'', ''GROUP_ID'': ''grp_121956''}}]'
