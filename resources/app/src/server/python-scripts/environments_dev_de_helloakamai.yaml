@@ -1,0 +1,34 @@
+---
+apiVersion: xl-deploy/v1
+kind: Environments
+spec:
+- directory: Environments/DEV/DE/helloakamai
+  children:
+  - name: helloakamai
+    type: udm.Dictionary
+    entries:
+      DICTIONARY_ENV: <empty>
+      CONTRACT_ID: <empty>
+      PROPERTY_ID: <empty>
+      ACTIVATION_MODE: <empty>
+      DEPLOY_PATH: /home/aradeploydev/akamai
+      NOTIFICATION_EMAIL_IDS: <empty>
+      GROUP_ID: <empty>
+      DEPLOYMENT_SCRIPT: <empty>
+      ACCOUNT_ID: <empty>
+  - name: helloakamai-env
+    type: udm.Environment
+    members:
+    - Infrastructure/DEV/DE/helloakamai/x286646-akamai/helloakamai-cgpkg-container
+    dictionaries:
+    - Environments/DEV/DE/helloakamai/helloakamai
+    overrideHostCredentials: true
+  - name: helloakamai-backup
+    type: udm.Dictionary
+    entries:
+      DEPLOY_PATH: /home/aradeploydev/akamai
+    encryptedEntries:
+      HOST_NAME: !value "Environments_DEV_DE_helloakamai_helloakamai_backup_encryptedEntries_HOST_NAME"
+      CLIENT_TOKEN: !value "Environments_DEV_DE_helloakamai_helloakamai_backup_encryptedEntries_CLIENT_TOKEN"
+      ACCESS_TOKEN: !value "Environments_DEV_DE_helloakamai_helloakamai_backup_encryptedEntries_ACCESS_TOKEN"
+      CLIENT_SECRET: !value "Environments_DEV_DE_helloakamai_helloakamai_backup_encryptedEntries_CLIENT_SECRET"
