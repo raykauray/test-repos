@@ -16,7 +16,7 @@ const createWindow = () => {
   });
   const file = url.format({
     protocol: "file",
-    hostname: path.join(__dirname, "./build/index.html"),
+    host: path.join(__dirname, "./build/index.html"),
   });
   // and load the index.html of the app.
   console.log(file);
