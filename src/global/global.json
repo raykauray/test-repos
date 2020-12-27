@@ -1,4 +1,4 @@
 {
-  "pathToTempDir": "../temp",
+  "pathToTempDir": "/temp",
   "pathToYamlValidotorPython": "/python-scripts/specs_validator.py"
 }
