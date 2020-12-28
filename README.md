@@ -2,7 +2,7 @@
 
 1.Please install node.js, version 14+. Follow [this link](https://nodejs.org/en/download/) to install nodejs according for your OS. 
 
-2.After install nodejs, navigate to the root directory of the project
+2.After installing nodejs, navigate to the root directory of the project
 
 3.Inside root directory, type, ```npm install```
 
